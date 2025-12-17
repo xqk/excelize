@@ -40,7 +40,7 @@ func TestAddPicture(t *testing.T) {
 		&GraphicOptions{OffsetX: 140, OffsetY: 120, Hyperlink: "#Sheet2!D8", HyperlinkType: "Location"}))
 	// Test add picture to worksheet with offset, external hyperlink and positioning
 	assert.NoError(t, f.AddPicture("Sheet1", "F21", filepath.Join("test", "images", "excel.jpg"),
-		&GraphicOptions{OffsetX: 10, OffsetY: 10, Hyperlink: "https://github.com/xuri/excelize", HyperlinkType: "External", Positioning: "oneCell"}))
+		&GraphicOptions{OffsetX: 10, OffsetY: 10, Hyperlink: "https://github.com/xqk/excelize", HyperlinkType: "External", Positioning: "oneCell"}))
 
 	// Test add pictures to single cell with offsets
 	assert.NoError(t, f.AddPicture("Sheet2", "K22", filepath.Join("test", "images", "excel.jpg"),
@@ -657,7 +657,7 @@ func TestGetCellImages(t *testing.T) {
 	f.Pkg.Store(defaultXMLRdRichValuePart, []byte(`<rvData count="1"><rv s="1"><v>0</v><v>1</v><v>0</v><v>0</v></rv></rvData>`))
 	f.Pkg.Store(defaultXMLRdRichValueWebImagePart, []byte(`<webImagesSrd xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><webImageSrd><address r:id="rId1"/><blip r:id="rId2"/></webImageSrd>
 	</webImagesSrd>`))
-	f.Pkg.Store(defaultXMLRdRichValueWebImagePartRels, []byte(fmt.Sprintf(`<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="%s" Target="https://github.com/xuri/excelize" TargetMode="External"/><Relationship Id="rId2" Type="%s" Target="../media/image1.png"/></Relationships>`, SourceRelationshipHyperLink, SourceRelationshipImage)))
+	f.Pkg.Store(defaultXMLRdRichValueWebImagePartRels, []byte(fmt.Sprintf(`<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="%s" Target="https://github.com/xqk/excelize" TargetMode="External"/><Relationship Id="rId2" Type="%s" Target="../media/image1.png"/></Relationships>`, SourceRelationshipHyperLink, SourceRelationshipImage)))
 	pics, err = f.GetPictures("Sheet1", "A1")
 	assert.NoError(t, err)
 	assert.Equal(t, 1, len(pics))
@@ -672,7 +672,7 @@ func TestGetCellImages(t *testing.T) {
 
 	// Test get the cell images inserted by IMAGE formula function without image part
 	f.Relationships.Delete(defaultXMLRdRichValueWebImagePartRels)
-	f.Pkg.Store(defaultXMLRdRichValueWebImagePartRels, []byte(fmt.Sprintf(`<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="%s" Target="https://github.com/xuri/excelize" TargetMode="External"/><Relationship Id="rId2" Type="%s" Target="../media/image1.png"/></Relationships>`, SourceRelationshipHyperLink, SourceRelationshipHyperLink)))
+	f.Pkg.Store(defaultXMLRdRichValueWebImagePartRels, []byte(fmt.Sprintf(`<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="%s" Target="https://github.com/xqk/excelize" TargetMode="External"/><Relationship Id="rId2" Type="%s" Target="../media/image1.png"/></Relationships>`, SourceRelationshipHyperLink, SourceRelationshipHyperLink)))
 	pics, err = f.GetPictures("Sheet1", "A1")
 	assert.NoError(t, err)
 	assert.Empty(t, pics)

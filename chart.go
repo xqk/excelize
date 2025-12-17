@@ -649,7 +649,7 @@ func (opts *Chart) parseTitle() {
 //	import (
 //	    "fmt"
 //
-//	    "github.com/xuri/excelize/v2"
+//	    "github.com/xqk/excelize/v2"
 //	)
 //
 //	func main() {
@@ -1079,7 +1079,7 @@ func (opts *Chart) parseTitle() {
 //	import (
 //	    "fmt"
 //
-//	    "github.com/xuri/excelize/v2"
+//	    "github.com/xqk/excelize/v2"
 //	)
 //
 //	func main() {

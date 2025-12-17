@@ -441,7 +441,7 @@ func TestInsertCols(t *testing.T) {
 
 	assert.NoError(t, fillCells(f, sheet1, 10, 10))
 
-	assert.NoError(t, f.SetCellHyperLink(sheet1, "A5", "https://github.com/xuri/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink(sheet1, "A5", "https://github.com/xqk/excelize", "External"))
 	assert.NoError(t, f.MergeCell(sheet1, "A1", "C3"))
 
 	assert.NoError(t, f.AutoFilter(sheet1, "A2:B2", []AutoFilterOptions{{Column: "B", Expression: "x != blanks"}}))
@@ -464,7 +464,7 @@ func TestRemoveCol(t *testing.T) {
 
 	assert.NoError(t, fillCells(f, sheet1, 10, 15))
 
-	assert.NoError(t, f.SetCellHyperLink(sheet1, "A5", "https://github.com/xuri/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink(sheet1, "A5", "https://github.com/xqk/excelize", "External"))
 	assert.NoError(t, f.SetCellHyperLink(sheet1, "C5", "https://github.com", "External"))
 
 	assert.NoError(t, f.MergeCell(sheet1, "A1", "B1"))

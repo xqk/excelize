@@ -2015,8 +2015,8 @@ func TestCalcCellValue(t *testing.T) {
 		"HLOOKUP(INT(F3),F3:F8,3,FALSE)":     "34440",
 		"HLOOKUP(MUNIT(1),MUNIT(1),1,FALSE)": "1",
 		// HYPERLINK
-		"HYPERLINK(\"https://github.com/xuri/excelize\")":              "https://github.com/xuri/excelize",
-		"HYPERLINK(\"https://github.com/xuri/excelize\",\"Excelize\")": "Excelize",
+		"HYPERLINK(\"https://github.com/xqk/excelize\")":              "https://github.com/xqk/excelize",
+		"HYPERLINK(\"https://github.com/xqk/excelize\",\"Excelize\")": "Excelize",
 		// VLOOKUP
 		"VLOOKUP(D2,D:D,1,FALSE)":            "Jan",
 		"VLOOKUP(D2,D1:D10,1)":               "Jan",
@@ -4081,7 +4081,7 @@ func TestCalcCellValue(t *testing.T) {
 		"TRANSPOSE()": {"#VALUE!", "TRANSPOSE requires 1 argument"},
 		// HYPERLINK
 		"HYPERLINK()": {"#VALUE!", "HYPERLINK requires at least 1 argument"},
-		"HYPERLINK(\"https://github.com/xuri/excelize\",\"Excelize\",\"\")": {"#VALUE!", "HYPERLINK allows at most 2 arguments"},
+		"HYPERLINK(\"https://github.com/xqk/excelize\",\"Excelize\",\"\")": {"#VALUE!", "HYPERLINK allows at most 2 arguments"},
 		// VLOOKUP
 		"VLOOKUP()":                     {"#VALUE!", "VLOOKUP requires at least 3 arguments"},
 		"VLOOKUP(D2,D1,1,FALSE)":        {"#VALUE!", "VLOOKUP requires second argument of table array"},

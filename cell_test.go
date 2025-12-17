@@ -50,7 +50,7 @@ func TestConcurrency(t *testing.T) {
 				&GraphicOptions{
 					OffsetX:       10,
 					OffsetY:       10,
-					Hyperlink:     "https://github.com/xuri/excelize",
+					Hyperlink:     "https://github.com/xqk/excelize",
 					HyperlinkType: "External",
 					Positioning:   "oneCell",
 				},
